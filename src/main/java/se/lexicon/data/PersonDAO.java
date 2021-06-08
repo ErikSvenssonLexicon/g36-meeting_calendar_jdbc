@@ -7,6 +7,10 @@ import java.util.Optional;
 
 public interface PersonDAO {
 
+    static PersonDAO getInstance(){
+        return PersonDAOImpl.getInstance();
+    }
+
     Person persist(Person person);
     Optional<Person> findById(Integer id);
     Optional<Person> findByEmail(String email);
